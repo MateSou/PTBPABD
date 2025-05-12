@@ -12,11 +12,11 @@ as
  select s.name as [Nome do Estudante], s.dept_name as [Departamento do Estudante],
 			 		c.title [Curso], c.dept_name [Departamento do Curso], t.semester as [Semestre],
 			 		t.year as [Ano], t.grade [Pontuação Alfanumérica], gp.points as [Pontuação Numérica]
-			 from takes t
-			 right join student s on s.ID = t.ID
-			 left join course c on c.course_id = t.course_id
-			 left join grade_points gp on gp.grade = t.grade
-			 where t.grade = @Conceito;
+ from takes t
+right join student s on s.ID = t.ID
+left join course c on c.course_id = t.course_id
+left join grade_points gp on gp.grade = t.grade
+where t.grade = @Conceito;
 
 
 /*Questão 02.
@@ -38,10 +38,10 @@ as
 return select i.name as [Nome do Instrutor], c.title as [Curso Ministrado],
 			  t.semester as [Semestre do Curso], t.year as [Ano do Curso],
 			  s.building as [Prédio], s.room_number as [Número da Sala]
-		from instructor i
-		right join teaches t on t.ID = i.ID
-		left join section s on s.course_id = t.course_id
-		right join course c on c.course_id = t.course_id
-		where i.name = @nameInstructor;
+from instructor i
+right join teaches t on t.ID = i.ID
+left join section s on s.course_id = t.course_id
+right join course c on c.course_id = t.course_id
+where i.name = @nameInstructor;
 
 	
