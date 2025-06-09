@@ -1,0 +1,28 @@
+use <database>; Seleciona um banco de dados que está no cluster
+  -Exemplo: use Filial
+
+show [collection] | [dbs]; Mostra uma lista com todas as collections ou dbs (banco de dados)
+
+var nomeVariavel; Cria uma variavel que pode armazenar um documento
+  -Exemplo: var contato = {"nome " : "Mateus", "email " : "email@exemplo.com"}
+
+db.collection.find(); Lista todos os documentos do banco de dados ou então procura um com base nos argumentos passados pelos parâmetros ou pode encontrar
+um documento onde os critérios são passados por argumentos dos paramêtros.
+  -Exemplo: db.collection.find 
+
+db.collection.findOne(); Retorna UM documento. Por padrão retorna o primeiro documento da coleção. Mas pode ser passado como argumento critérios únicos
+de um documento.
+  -Exemplo: db.collection.findOne({"nome" : "Mateus"}) //Retorna um documento com o campo "nome" igual a "Mateus"
+
+db.collection.insertOne(); Insere UM documento no banco de dados. Uma variavel que armazena um documento pode ser passada como argumento do parâmetro. Ou,
+pode o documento pode ser inserido como: db.databse.insertOne({"nome " : "Mateus", "email " : "email@exemplo.com"})
+
+db.collection.insertMany([{<do1>},{<doc2>},...]); Insere mais de um documento de uma vez
+  -Exemplo: db.collection.insertMany([{contact},{contato1}]) //Inserindo dois documentos armazenados em duas variaveis
+
+db.collection.deleteOne({<doc1>}); Deleta apenas um documento que é específicado pelos critérios passado como argumentos
+  -Exemplo:db.contatos.deleteOne({_id: ObjectId('id011')}) //exclui um documento que tem o campo "_id" igual a "id011"
+
+
+
+
