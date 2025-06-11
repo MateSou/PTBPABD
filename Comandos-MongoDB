@@ -23,6 +23,14 @@ db.collection.insertMany([{<do1>},{<doc2>},...]); Insere mais de um documento de
 db.collection.deleteOne({<doc1>}); Deleta apenas um documento que é específicado pelos critérios passado como argumentos
   -Exemplo:db.contatos.deleteOne({_id: ObjectId('id011')}) //exclui um documento que tem o campo "_id" igual a "id011"
 
+db.collection.countDocuments(); Conta a quantidade de documentos na coleção.
+
+db.contatos.updateOne(<filtro>, <update>); Modifica UM documento específicado no primeiro argumento. No segundo é colocado o novo valor desejado
+  -Exemplo: db.contatos.updateOne({"nome" : "Mateus"},{ $set: Contato}) //O documento com o campo "nome" no valor "Mateus" terá o campo "nome" atualizado para
+   o valor contido na variável Contato. Neste caso, Contato poderia ter o campo "nome" como "Mateus Marques"
+
+
+
 
 
 
